@@ -13,7 +13,10 @@ sources. Its usually being used for shady things, however it can be repurposed f
 ## Board Configuration used in STM32CUBEMX
  ![Clock](/pictures/clock.png)
  
- 
+## Pinout:
+Can1 is assigned to PA11 & PA12 (default in STMCubeMX)
+Can2 is assigned to PB05 & PB06 (not default configuration)
+
 ## Sample Project
 
 Can be found in this repository.
