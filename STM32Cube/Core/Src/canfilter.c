@@ -9,7 +9,18 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <string.h>
-#include "canfilter.h"
+/* USER CODE END Includes */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+CAN_TxHeaderTypeDef TxHeader;
+uint8_t TxData[8];
+uint32_t TxMailbox;
+CAN_RxHeaderTypeDef RxHeader;
+uint8_t RxData[8];
+uint16_t rpm;
+/* USER CODE END PD */
+
 void canloop(CAN_HandleTypeDef *can1, CAN_HandleTypeDef *can2) {
 	while (1) {
 		// Receive Message from Can1 & send to CAN2:
