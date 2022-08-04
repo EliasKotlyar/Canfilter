@@ -21,6 +21,12 @@ uint8_t RxData[8];
 uint16_t rpm;
 /* USER CODE END PD */
 
+/* Private function prototypes -----------------------------------------------*/
+/* USER CODE BEGIN PFP */
+void copyData(void);
+void filtercan(int airbid, uint8_t data[8]);
+/* USER CODE END PFP */
+
 void canloop(CAN_HandleTypeDef *can1, CAN_HandleTypeDef *can2) {
 	while (1) {
 		// Receive Message from Can1 & send to CAN2:
@@ -71,7 +77,7 @@ void copyData() {
 	filtercan(RxHeader.StdId, TxData);
 
 }
-void filtercan(int airbid, uint8_t *data[8]) {
+void filtercan(int airbid, uint8_t data[8]) {
 	if (airbid == 0x316) {
 		uint8_t d1 = data[2];
 		uint8_t d2 = data[3];
