@@ -8,14 +8,14 @@
 #ifndef INC_CANFILTER_H_
 #define INC_CANFILTER_H_
 
-CAN_TxHeaderTypeDef TxHeader;
-uint8_t TxData[8];
-uint32_t TxMailbox;
-uint8_t RxData[8];
-uint32_t TxMailbox;
-CAN_RxHeaderTypeDef RxHeader;
+extern CAN_TxHeaderTypeDef TxHeader;
+extern uint8_t TxData[8];
+extern uint32_t TxMailbox;
+extern CAN_RxHeaderTypeDef RxHeader;
+extern uint8_t RxData[8];
+extern uint16_t rpm;
+
 void canloop(CAN_HandleTypeDef *can1, CAN_HandleTypeDef *can2);
 void filtercan(int airbid, uint8_t *data[8]);
-uint16_t rpm;
 
 #endif /* INC_CANFILTER_H_ */
